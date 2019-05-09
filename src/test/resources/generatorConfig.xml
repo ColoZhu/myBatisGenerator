@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC
+		"-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+		"../mybatis-generate-core/src/main/resources/org/mybatis/generator/config/xml/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+	<context id="oracleTable">
+
+		<property name="javaFileEncoding" value="UTF-8"/>
+
+		<plugin type="org.mybatis.generator.plugins.UserDefinePlugin"/>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+						connectionURL="jdbc:mysql://localhost:3306/haiyu?characterEncoding=UTF-8&amp;autoReconnect=true"
+						userId="root"
+						password="123456">
+			<property name="remarksReporting" value="true"/>
+		</jdbcConnection>
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false"/>
+			<property name="yp_dateTime2String" value="true"/>
+			<property name="yp_projectName" value="prs"/>
+		</javaTypeResolver>
+		<!-- domain实体 -->
+		<!--D:\code\haiyu\src\main\java\com\haiyu\manager\pojo-->
+		<javaModelGenerator targetPackage="com.haiyu.manager.pojo"
+							targetProject="D:/code/haiyu/src/main/java">
+			<!--是否允许建立子包（对应MySql的scheme）-->
+			<!--<property name="rootClass" value="com.yp.custtrack.domain.BaseDomain"/>-->
+		</javaModelGenerator>
+		<!-- xml映射文件 -->
+		<!--D:\code\haiyu\src\main\resources\mapper-->
+		<sqlMapGenerator targetPackage="mapper"
+						 targetProject="D:/code/haiyu/src/main/resources">
+		</sqlMapGenerator>
+		<!-- dao 接口 -->
+		<!--D:\pms\src\main\java\com\yp\pms\dao\archive\PmsArchiveInfoMapper.java-->
+		<!--D:\code\haiyu\src\main\java\com\haiyu\manager\dao-->
+		<javaClientGenerator type="XMLMAPPER"
+							 targetPackage="com.haiyu.manager.dao"
+							 targetProject="D:/code/haiyu/src/main/java"/>
+		<table tableName="formtable_main_322" domainObjectName="Contract" schema="haiyu" />
+
+
+	</context>
+</generatorConfiguration>   
