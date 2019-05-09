@@ -5,7 +5,7 @@
 
 <generatorConfiguration>
 
-    <context id="oracleTable">
+    <context id="myTable">
 
         <property name="javaFileEncoding" value="UTF-8"/>
 
